@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/bg.jpg"),
+                  image: AssetImage("assets/RPSV_ICON.png"),
                   fit: BoxFit.cover,
                 ),
                 color: Colors.blue,
