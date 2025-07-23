@@ -59,7 +59,8 @@ flutter:
 
   assets:
     - assets/bg.jpg
-    - RPSV_ICON.png
+    - assets/RPSV_ICON.png
+    - assets/USTP_CDO.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
