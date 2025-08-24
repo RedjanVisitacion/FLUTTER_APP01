@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app01/pages/appbar_sample.dart';
-import 'package:flutter_app01/pages/buttons_sample.dart';
-import 'package:flutter_app01/pages/column_sample.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_app01/pages/samples/appbar_sample.dart';
+import 'package:flutter_app01/pages/samples/buttons_sample.dart';
+import 'package:flutter_app01/pages/samples/column_sample.dart';
 import 'package:flutter_app01/pages/home_page.dart';
-import 'package:flutter_app01/pages/row_sample.dart';
+import 'package:flutter_app01/pages/samples/row_sample.dart';
+import 'package:flutter_app01/pages/login_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyFirstApp());
 }
 
@@ -17,13 +21,15 @@ class MyFirstApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'RPSV_CODES',
-      home:
-          //RowSample(),
-          //ColumnSample(),
-          //AppbarSample(),
-          //ButtonsSample(),
-          HomePage(),
-
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/home': (context) => HomePage(),
+        '/row': (context) => RowSample(),
+        '/column': (context) => ColumnSample(),
+        '/appbar': (context) => AppbarSample(),
+        '/buttons': (context) => ButtonsSample(),
+      },
     );
   }
 }
